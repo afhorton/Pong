@@ -23,8 +23,3 @@ func get_axis(up, down):
 	if Input.is_key_pressed(up): return - 1
 	elif Input.is_key_pressed(down): return 1
 
-
-
-func _on_area_2d_body_entered(body):
-	body.direction.x *= -1
-	Main.side = side

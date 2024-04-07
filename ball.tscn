@@ -5,16 +5,20 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_n4wkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ucj1h"]
-size = Vector2(53.5, 58.5)
+size = Vector2(28.375, 32.625)
 
-[node name="Ball" type="CharacterBody2D"]
+[node name="Ball" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_k81dy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(583, 315)
-scale = Vector2(51.5, 54.5)
+position = Vector2(594.875, 327.125)
+scale = Vector2(27.75, 30.25)
 texture = SubResource("PlaceholderTexture2D_n4wkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(582.25, 312.75)
+position = Vector2(595.188, 327.312)
 shape = SubResource("RectangleShape2D_ucj1h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

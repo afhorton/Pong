@@ -1,56 +1,59 @@
-[gd_scene load_steps=9 format=3 uid="uid://6tnbecsc2quj"]
+[gd_scene load_steps=10 format=3 uid="uid://6tnbecsc2quj"]
 
 [ext_resource type="Script" path="res://pong_game.gd" id="1_pp46f"]
 [ext_resource type="PackedScene" uid="uid://cny8yjuewrv7n" path="res://player.tscn" id="2_3u500"]
 [ext_resource type="PackedScene" uid="uid://bqcwqgeno4hto" path="res://ball.tscn" id="3_cbhq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1llpj"]
-size = Vector2(1143, 97)
+size = Vector2(1172.5, 97)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agaia"]
 size = Vector2(1151.5, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehdhs"]
-size = Vector2(87, 636.5)
+size = Vector2(87, 800.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm51j"]
-size = Vector2(87, 648.5)
+size = Vector2(87, 826.25)
 
 [sub_resource type="SystemFont" id="SystemFont_kk1ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjpko"]
+size = Vector2(1172.5, 20)
 
 [node name="PongGame" type="Node2D"]
 script = ExtResource("1_pp46f")
 
 [node name="Top" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
-position = Vector2(573, -49)
+position = Vector2(579, -37)
 shape = SubResource("RectangleShape2D_1llpj")
 
 [node name="Bottom" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
-position = Vector2(576, 696)
+position = Vector2(573, 680)
 shape = SubResource("RectangleShape2D_agaia")
 
 [node name="Left" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(-46, 327)
+position = Vector2(-38, 397)
 shape = SubResource("RectangleShape2D_ehdhs")
 
 [node name="Right" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-position = Vector2(1199, 326)
+position = Vector2(1185, 415)
 shape = SubResource("RectangleShape2D_tm51j")
 
 [node name="Player" parent="." instance=ExtResource("2_3u500")]
@@ -78,7 +81,18 @@ offset_bottom = 144.0
 theme_override_fonts/font = SubResource("SystemFont_kk1ua")
 text = "0"
 
-[connection signal="body_entered" from="Top" to="." method="_on_top_body_entered"]
-[connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
-[connection signal="body_entered" from="Left" to="." method="_on_left_body_entered"]
-[connection signal="body_entered" from="Right" to="." method="_on_right_body_entered"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-2, 3)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(582, 648)
+shape = SubResource("RectangleShape2D_sjpko")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(582, -12)
+shape = SubResource("RectangleShape2D_sjpko")
+
+[connection signal="area_entered" from="Top" to="." method="_on_top_area_entered"]
+[connection signal="area_entered" from="Bottom" to="." method="_on_bottom_area_entered"]
+[connection signal="area_entered" from="Left" to="." method="_on_left_area_entered"]
+[connection signal="area_entered" from="Right" to="." method="_on_right_area_entered"]
