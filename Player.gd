@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 @export var side = 'p1'
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	var direction
 	if side == 'p1':

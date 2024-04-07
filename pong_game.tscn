@@ -29,7 +29,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
-position = Vector2(579, -37)
+position = Vector2(577, -37)
 shape = SubResource("RectangleShape2D_1llpj")
 
 [node name="Bottom" type="Area2D" parent="."]
@@ -37,7 +37,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
-position = Vector2(573, 680)
+position = Vector2(573, 674)
 shape = SubResource("RectangleShape2D_agaia")
 
 [node name="Left" type="Area2D" parent="."]
@@ -45,7 +45,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
-position = Vector2(-38, 397)
+position = Vector2(-32, 399)
 shape = SubResource("RectangleShape2D_ehdhs")
 
 [node name="Right" type="Area2D" parent="."]
@@ -53,7 +53,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
-position = Vector2(1185, 415)
+position = Vector2(1175, 415)
 shape = SubResource("RectangleShape2D_tm51j")
 
 [node name="Player" parent="." instance=ExtResource("2_3u500")]
