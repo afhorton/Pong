@@ -1,0 +1,12 @@
+config_version=5
+
+[application]
+
+config/name="Pong"
+run/main_scene="res://pong_game.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Main="*res://main.gd"
