@@ -1,5 +1,5 @@
-res://pong_game.tscn
-res://pong_game.gd
-res://Player.gd
-res://ball.tscn
 res://player.tscn
+res://pong_game.tscn
+res://ball.tscn
+res://Ball.gd
+res://pong_game.gd

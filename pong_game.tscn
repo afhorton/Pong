@@ -62,8 +62,7 @@ shape = SubResource("RectangleShape2D_tm51j")
 position = Vector2(1021, -10)
 
 [node name="Ball" parent="." instance=ExtResource("3_cbhq6")]
-collision_layer = 2
-collision_mask = 0
+collision_mask = 6
 
 [node name="Label" type="Label" parent="."]
 offset_left = 267.0

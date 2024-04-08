@@ -16,9 +16,17 @@ func _on_bottom_area_entered(area):
 
 func _on_left_area_entered(area):
 	area.global_position = Vector2(576,320)
+	#area.queue_free()
+	#var e = preload("res://ball.tscn").instantiate()
+	#e.global_position = Vector2(576, 320)
+	#call_deferred("add_child", e)
 	Main.p2_score += 1
 
 func _on_right_area_entered(area):
 	area.global_position = Vector2(576,320)
-	Main.p2_score += 1
+	#area.queue_free()
+	#var e = preload("res://ball.tscn").instantiate()
+	#e.global_position = Vector2(576, 320)
+	#call_deferred("add_child", e)
+	Main.p1_score += 1
 
