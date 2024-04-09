@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://6tnbecsc2quj"]
+[gd_scene load_steps=11 format=3 uid="uid://6tnbecsc2quj"]
 
 [ext_resource type="Script" path="res://pong_game.gd" id="1_pp46f"]
 [ext_resource type="PackedScene" uid="uid://cny8yjuewrv7n" path="res://player.tscn" id="2_3u500"]
+[ext_resource type="Script" path="res://player2.gd" id="3_1mfe8"]
 [ext_resource type="PackedScene" uid="uid://bqcwqgeno4hto" path="res://ball.tscn" id="3_cbhq6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1llpj"]
@@ -57,9 +58,13 @@ position = Vector2(1175, 415)
 shape = SubResource("RectangleShape2D_tm51j")
 
 [node name="Player" parent="." instance=ExtResource("2_3u500")]
+collision_layer = 2
 
 [node name="Player2" parent="." instance=ExtResource("2_3u500")]
 position = Vector2(1021, -10)
+collision_layer = 2
+script = ExtResource("3_1mfe8")
+side = "p2"
 
 [node name="Ball" parent="." instance=ExtResource("3_cbhq6")]
 position = Vector2(574, 300)

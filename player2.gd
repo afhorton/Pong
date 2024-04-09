@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
+
 const SPEED = 300.0
-@export var side = 'p1'
+@export var side = 'p2'
 
 func _physics_process(_delta):
 	
